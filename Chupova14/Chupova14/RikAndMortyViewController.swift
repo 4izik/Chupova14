@@ -5,38 +5,36 @@ import RealmSwift
 
 
 class RikAndMortyViewController: UIViewController {
-    var heroes:[Hero] = []
-     var numberOfCells:Int=10
-    
+    var heroes:[Hero] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
      override func viewDidLoad() {
          super.viewDidLoad()
-        var allHeroes=SaveHeroRealm.sharedHero.allHeroesRealm()
+        let allHeroes=SaveHeroRealm.sharedHero.allHeroesRealm()
         if allHeroes != 0
         {
             self.loadHeroRealm()
             
         }
+        else {
+            HeroesLoader().loadHeroes { heroes in
+                 self.heroes=heroes
+                for object in heroes {
+                    SaveHeroRealm.sharedHero.addHeroRealm(hero: object)
+                }
+                self.tableView.reloadData()
+                     }
+        }
         tableView.tableFooterView=UIView()
      
      }
-  /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let cell=sender as? HeroCell
-         let index=tableView.indexPath(for: cell!)
-         let vc=segue.destination as? CharacterViewController
-         vc?.idVar=heroes[index!.row].id
-         
-     }*/
      override func viewDidAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
-        HeroesLoader().loadHeroes { heroes in
-             self.heroes=heroes
-            for object in heroes {
-                SaveHeroRealm.sharedHero.addHeroRealm(hero: object)
-            }
-            self.tableView.reloadData()
-                 }
+       
      }
     func loadHeroRealm() {
         let realm=try! Realm()
