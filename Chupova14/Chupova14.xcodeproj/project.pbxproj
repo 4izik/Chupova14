@@ -26,6 +26,7 @@
 		5D4F5BDD268B18C8009B39F5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BDC268B18C8009B39F5 /* Hero.swift */; };
 		5D4F5BDF268B1908009B39F5 /* HeroesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BDE268B1908009B39F5 /* HeroesLoader.swift */; };
 		5D4F5BE1268B198F009B39F5 /* CommonResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BE0268B198F009B39F5 /* CommonResult.swift */; };
+		5D4F5BE3268B2B92009B39F5 /* HeroRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BE2268B2B92009B39F5 /* HeroRealm.swift */; };
 		9962A362B35C0DBA0026054F /* Pods_Chupova14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B5133D389B0C49CBBCCCB /* Pods_Chupova14.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		5D4F5BDC268B18C8009B39F5 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		5D4F5BDE268B1908009B39F5 /* HeroesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesLoader.swift; sourceTree = "<group>"; };
 		5D4F5BE0268B198F009B39F5 /* CommonResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResult.swift; sourceTree = "<group>"; };
+		5D4F5BE2268B2B92009B39F5 /* HeroRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRealm.swift; sourceTree = "<group>"; };
 		74196C41785BE06B4C7303FA /* Pods-Chupova14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chupova14.release.xcconfig"; path = "Target Support Files/Pods-Chupova14/Pods-Chupova14.release.xcconfig"; sourceTree = "<group>"; };
 		C1DBE566AF29EC64FF83A38B /* Pods-Chupova14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chupova14.debug.xcconfig"; path = "Target Support Files/Pods-Chupova14/Pods-Chupova14.debug.xcconfig"; sourceTree = "<group>"; };
 		F90B5133D389B0C49CBBCCCB /* Pods_Chupova14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chupova14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				5D4F5BE0268B198F009B39F5 /* CommonResult.swift */,
 				5D4F5BDC268B18C8009B39F5 /* Hero.swift */,
 				5D4F5BD8268B16AA009B39F5 /* RikAndMortyViewController.swift */,
+				5D4F5BE2268B2B92009B39F5 /* HeroRealm.swift */,
 				5D4F5BC2268AF7F3009B39F5 /* NameSurname.swift */,
 				5D4F5BC4268AF812009B39F5 /* NameSurnameViewController.swift */,
 				5D4F5BC6268AF836009B39F5 /* Task.swift */,
@@ -259,6 +262,7 @@
 				5D4F5BC9268AF865009B39F5 /* ToDoCoreDataTableViewCell.swift in Sources */,
 				5D4F5BDD268B18C8009B39F5 /* Hero.swift in Sources */,
 				5D4F5BAE268AF6B6009B39F5 /* SceneDelegate.swift in Sources */,
+				5D4F5BE3268B2B92009B39F5 /* HeroRealm.swift in Sources */,
 				5D4F5BCF268AF8BC009B39F5 /* ToDoRealmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
