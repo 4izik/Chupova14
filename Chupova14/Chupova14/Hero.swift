@@ -7,7 +7,7 @@ import Realm
     @objc dynamic var name=""
     @objc dynamic var status=""
     @objc dynamic var species=""
-    let location = RealmSwift.List<Location>()
+    @objc dynamic var location:Location?
     enum CodingKeys: String, CodingKey {
             case name = "name"
             case status = "status"

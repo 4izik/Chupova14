@@ -23,7 +23,7 @@ class HeroTableViewCell: UITableViewCell {
     func setup(with character: Hero){
         heroNameLabel.text=character.name
         heroStatusLabel.text=character.status + " - " + character.species
-        //heroLocationLabel.text=character.location.name
+        heroLocationLabel.text=character.location?.name
         if let imageURL = URL(string: character.image),
            let data = try? Data(contentsOf: imageURL)
         {

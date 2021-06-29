@@ -9,7 +9,7 @@ class SaveHeroRealm {
         character.image=hero.image
         character.name=hero.name
         character.status=hero.status + "-" + hero.species
-      
+        character.location=hero.location
         try! realm.write{
             realm.add(character)
         }
@@ -26,6 +26,9 @@ class SaveHeroRealm {
             }
         }
         
+    }
+    func allHeroesRealm() -> Int {
+        return realm.objects(Hero.self).count
     }
 }
 

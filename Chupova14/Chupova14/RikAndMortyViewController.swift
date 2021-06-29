@@ -12,7 +12,12 @@ class RikAndMortyViewController: UIViewController {
     
      override func viewDidLoad() {
          super.viewDidLoad()
-        self.loadHeroRealm()
+        var allHeroes=SaveHeroRealm.sharedHero.allHeroesRealm()
+        if allHeroes != 0
+        {
+            self.loadHeroRealm()
+            
+        }
         tableView.tableFooterView=UIView()
      
      }
@@ -25,10 +30,13 @@ class RikAndMortyViewController: UIViewController {
      }*/
      override func viewDidAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
-         /*HeroesLoader().loadHeroes { heroes in
-        self.heroes=heroes
-        self.tableView.reloadData()
-         }*/
+        HeroesLoader().loadHeroes { heroes in
+             self.heroes=heroes
+            for object in heroes {
+                SaveHeroRealm.sharedHero.addHeroRealm(hero: object)
+            }
+            self.tableView.reloadData()
+                 }
      }
     func loadHeroRealm() {
         let realm=try! Realm()
@@ -50,7 +58,6 @@ class RikAndMortyViewController: UIViewController {
          let cell=tableView.dequeueReusableCell(withIdentifier: "HeroCell") as! HeroTableViewCell
          let character=heroes[indexPath.row]
          cell.setup(with: character)
-        SaveHeroRealm.sharedHero.addHeroRealm(hero: character)
          return cell
      }
 
