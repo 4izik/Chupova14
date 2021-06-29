@@ -1,7 +1,7 @@
 
 
 import UIKit
-
+import AlamofireImage
 class HeroTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -24,10 +24,9 @@ class HeroTableViewCell: UITableViewCell {
         heroNameLabel.text=character.name
         heroStatusLabel.text=character.status + " - " + character.species
         heroLocationLabel.text=character.location?.name
-        if let imageURL = URL(string: character.image),
-           let data = try? Data(contentsOf: imageURL)
+        if let imageURL = URL(string: character.image)
         {
-         heroImageView.image = UIImage(data: data)
+            heroImageView.af.setImage(withURL: imageURL)
         }
         backView.layer.cornerRadius=10
         backView.clipsToBounds=true
