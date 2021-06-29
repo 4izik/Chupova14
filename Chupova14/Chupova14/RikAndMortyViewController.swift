@@ -12,6 +12,7 @@ class RikAndMortyViewController: UIViewController {
     
      override func viewDidLoad() {
          super.viewDidLoad()
+        self.loadHeroRealm()
         tableView.tableFooterView=UIView()
      
      }
@@ -32,7 +33,7 @@ class RikAndMortyViewController: UIViewController {
     func loadHeroRealm() {
         let realm=try! Realm()
         var heroes=[Hero]()
-        for character in realm.objects(HeroRealm.self)
+        for character in realm.objects(Hero.self)
         {
             heroes.append(character)
         }
