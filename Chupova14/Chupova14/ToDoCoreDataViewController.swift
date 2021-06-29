@@ -6,7 +6,8 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var coreDataTableView: UITableView!
     @IBOutlet weak var newTaskCoreDataTextField: UITextField!
-    var tasksCoreData=[String]()
+    var tasksCoreData=[TaskCoreData]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +18,11 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
     
     //добавление задачи по нажатию на кнопку
     @IBAction func addTaskCoreData(_ sender: Any) {
-        let taskInTextField=newTaskCoreDataTextField.text
-        tasksCoreData.append(taskInTextField ?? "")
-        saveTaskCoreData(onetask: taskInTextField ?? "")
+        let context=persistent()
+        let newTask=TaskCoreData(context: context)
+        newTask.text=newTaskCoreDataTextField.text
+        tasksCoreData.append(newTask)
+        saveTaskCoreData(onetask: newTask)
         newTaskCoreDataTextField.text=""
         coreDataTableView.reloadData()
     }
@@ -54,10 +57,10 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
 
     }
     // сохраение задачи в БД
-    func saveTaskCoreData (onetask: String) {
+    func saveTaskCoreData (onetask: TaskCoreData) {
         let context=persistent()
         var task=TaskCoreData(context: context)
-        task.text=onetask
+        task=onetask
         saveContext(context: context)
     }
     
@@ -67,17 +70,17 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
         let fetchRequest: NSFetchRequest<TaskCoreData> = TaskCoreData.fetchRequest()
         let objects = try! context.fetch(fetchRequest)
         for task in objects {
-            tasksCoreData.append(task.text!)
+            tasksCoreData.append(task)
         }
     }
    
     //удаление задач из БД
-    func deleteTaskCoreData(task:String){
+    func deleteTaskCoreData(task:TaskCoreData){
         let context=persistent()
         let fetchRequest: NSFetchRequest<TaskCoreData> = TaskCoreData.fetchRequest()
         let objects = try! context.fetch(fetchRequest)
         for result in objects {
-            if result.text==task
+            if result==task
             {
                 context.delete(result)
             }
@@ -114,7 +117,7 @@ extension UITableView {
 extension ToDoCoreDataViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "CellCoreData") as! ToDoCoreDataTableViewCell
-        cell.taskLabel.text=tasksCoreData[indexPath.row]
+        cell.taskLabel.text=tasksCoreData[indexPath.row].text
         return cell
     }
     
