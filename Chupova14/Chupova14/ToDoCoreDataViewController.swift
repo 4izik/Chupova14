@@ -7,8 +7,19 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var coreDataTableView: UITableView!
     @IBOutlet weak var newTaskCoreDataTextField: UITextField!
     var tasksCoreData=[TaskCoreData]()
-    
-    
+    static let persistentContainer: NSPersistentContainer = {
+          let container = NSPersistentContainer(name: "Chupova14")
+          container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+              if let error = error as NSError? {
+                  fatalError("Unresolved error \(error), \(error.userInfo)")
+              }
+          })
+          return container
+      }()
+    var context:  NSManagedObjectContext = {
+        return persistentContainer.viewContext
+
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTaskCoreData()
@@ -18,30 +29,18 @@ class ToDoCoreDataViewController: UIViewController,UITextFieldDelegate {
     
     //добавление задачи по нажатию на кнопку
     @IBAction func addTaskCoreData(_ sender: Any) {
-        let context=persistent()
         let newTask=TaskCoreData(context: context)
         newTask.text=newTaskCoreDataTextField.text
+        if newTask.text != "" {
         tasksCoreData.append(newTask)
         saveTaskCoreData(onetask: newTask)
+        }
         newTaskCoreDataTextField.text=""
         coreDataTableView.reloadData()
     }
     //создание экземпляра ManagedObject
     func persistent() -> NSManagedObjectContext {
-        var persistentContainer: NSPersistentContainer = {
-              let container = NSPersistentContainer(name: "Chupova14")
-              container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-                  if let error = error as NSError? {
-                      fatalError("Unresolved error \(error), \(error.userInfo)")
-                  }
-              })
-              return container
-          }()
-        var context:  NSManagedObjectContext = {
-            return persistentContainer.viewContext
-          }()
         return context
-        
     }
     //сохранение контекста
     func saveContext(context:  NSManagedObjectContext) {

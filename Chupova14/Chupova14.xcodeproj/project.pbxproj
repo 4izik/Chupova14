@@ -21,6 +21,11 @@
 		5D4F5BCB268AF881009B39F5 /* ToDoCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BCA268AF881009B39F5 /* ToDoCoreDataViewController.swift */; };
 		5D4F5BCF268AF8BC009B39F5 /* ToDoRealmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BCE268AF8BC009B39F5 /* ToDoRealmTableViewCell.swift */; };
 		5D4F5BD1268AF8DA009B39F5 /* ToDoRealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BD0268AF8DA009B39F5 /* ToDoRealmViewController.swift */; };
+		5D4F5BD9268B16AA009B39F5 /* RikAndMortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BD8268B16AA009B39F5 /* RikAndMortyViewController.swift */; };
+		5D4F5BDB268B180A009B39F5 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BDA268B180A009B39F5 /* HeroTableViewCell.swift */; };
+		5D4F5BDD268B18C8009B39F5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BDC268B18C8009B39F5 /* Hero.swift */; };
+		5D4F5BDF268B1908009B39F5 /* HeroesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BDE268B1908009B39F5 /* HeroesLoader.swift */; };
+		5D4F5BE1268B198F009B39F5 /* CommonResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4F5BE0268B198F009B39F5 /* CommonResult.swift */; };
 		9962A362B35C0DBA0026054F /* Pods_Chupova14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B5133D389B0C49CBBCCCB /* Pods_Chupova14.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +46,11 @@
 		5D4F5BCA268AF881009B39F5 /* ToDoCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCoreDataViewController.swift; sourceTree = "<group>"; };
 		5D4F5BCE268AF8BC009B39F5 /* ToDoRealmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRealmTableViewCell.swift; sourceTree = "<group>"; };
 		5D4F5BD0268AF8DA009B39F5 /* ToDoRealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRealmViewController.swift; sourceTree = "<group>"; };
+		5D4F5BD8268B16AA009B39F5 /* RikAndMortyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RikAndMortyViewController.swift; sourceTree = "<group>"; };
+		5D4F5BDA268B180A009B39F5 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
+		5D4F5BDC268B18C8009B39F5 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		5D4F5BDE268B1908009B39F5 /* HeroesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesLoader.swift; sourceTree = "<group>"; };
+		5D4F5BE0268B198F009B39F5 /* CommonResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResult.swift; sourceTree = "<group>"; };
 		74196C41785BE06B4C7303FA /* Pods-Chupova14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chupova14.release.xcconfig"; path = "Target Support Files/Pods-Chupova14/Pods-Chupova14.release.xcconfig"; sourceTree = "<group>"; };
 		C1DBE566AF29EC64FF83A38B /* Pods-Chupova14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chupova14.debug.xcconfig"; path = "Target Support Files/Pods-Chupova14/Pods-Chupova14.debug.xcconfig"; sourceTree = "<group>"; };
 		F90B5133D389B0C49CBBCCCB /* Pods_Chupova14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chupova14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +101,11 @@
 				5D4F5BAD268AF6B6009B39F5 /* SceneDelegate.swift */,
 				5D4F5BAF268AF6B6009B39F5 /* ViewController.swift */,
 				5D4F5BB1268AF6B6009B39F5 /* Main.storyboard */,
+				5D4F5BDA268B180A009B39F5 /* HeroTableViewCell.swift */,
+				5D4F5BDE268B1908009B39F5 /* HeroesLoader.swift */,
+				5D4F5BE0268B198F009B39F5 /* CommonResult.swift */,
+				5D4F5BDC268B18C8009B39F5 /* Hero.swift */,
+				5D4F5BD8268B16AA009B39F5 /* RikAndMortyViewController.swift */,
 				5D4F5BC2268AF7F3009B39F5 /* NameSurname.swift */,
 				5D4F5BC4268AF812009B39F5 /* NameSurnameViewController.swift */,
 				5D4F5BC6268AF836009B39F5 /* Task.swift */,
@@ -230,7 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4F5BB0268AF6B6009B39F5 /* ViewController.swift in Sources */,
+				5D4F5BDB268B180A009B39F5 /* HeroTableViewCell.swift in Sources */,
+				5D4F5BD9268B16AA009B39F5 /* RikAndMortyViewController.swift in Sources */,
 				5D4F5BC5268AF812009B39F5 /* NameSurnameViewController.swift in Sources */,
+				5D4F5BDF268B1908009B39F5 /* HeroesLoader.swift in Sources */,
+				5D4F5BE1268B198F009B39F5 /* CommonResult.swift in Sources */,
 				5D4F5BCB268AF881009B39F5 /* ToDoCoreDataViewController.swift in Sources */,
 				5D4F5BB6268AF6B6009B39F5 /* Chupova14.xcdatamodeld in Sources */,
 				5D4F5BD1268AF8DA009B39F5 /* ToDoRealmViewController.swift in Sources */,
@@ -238,6 +257,7 @@
 				5D4F5BC3268AF7F3009B39F5 /* NameSurname.swift in Sources */,
 				5D4F5BC7268AF836009B39F5 /* Task.swift in Sources */,
 				5D4F5BC9268AF865009B39F5 /* ToDoCoreDataTableViewCell.swift in Sources */,
+				5D4F5BDD268B18C8009B39F5 /* Hero.swift in Sources */,
 				5D4F5BAE268AF6B6009B39F5 /* SceneDelegate.swift in Sources */,
 				5D4F5BCF268AF8BC009B39F5 /* ToDoRealmTableViewCell.swift in Sources */,
 			);
