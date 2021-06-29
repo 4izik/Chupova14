@@ -8,7 +8,8 @@ class SaveHeroRealm {
         let character=Hero()
         character.image=hero.image
         character.name=hero.name
-        character.status=hero.status + "-" + hero.species
+        character.species=hero.species
+        character.status=hero.status
         character.location=hero.location
         try! realm.write{
             realm.add(character)

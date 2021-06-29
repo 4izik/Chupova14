@@ -26,7 +26,7 @@ class RikAndMortyViewController: UIViewController {
                 for object in heroes {
                     SaveHeroRealm.sharedHero.addHeroRealm(hero: object)
                 }
-                self.tableView.reloadData()
+                
                      }
         }
         tableView.tableFooterView=UIView()

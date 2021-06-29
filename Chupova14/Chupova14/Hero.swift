@@ -8,21 +8,21 @@ import Realm
     @objc dynamic var status=""
     @objc dynamic var species=""
     @objc dynamic var location:Location?
-    enum CodingKeys: String, CodingKey {
+    /*enum CodingKeys: String, CodingKey {
             case name = "name"
             case status = "status"
             case species="species"
             case image = "image"
             case location = "location"
-        }
+        }*/
 }
 @objcMembers class Location:Object, Codable {
     @objc dynamic var name=""
     @objc dynamic var url=""
-    enum CodingKeys: String, CodingKey {
+    /*enum CodingKeys: String, CodingKey {
             case name = "name"
             case url = "url"
-        }
+        }*/
    
 }
 class Origin:Codable{
